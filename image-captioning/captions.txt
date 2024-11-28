@@ -1,0 +1,3 @@
+cat.jpeg: a small kitten sitting on a tiled floor
+cat2.jpeg: a small orange cat sitting on a white background
+cat3.jpeg: a small kitten standing on a wooden floor
