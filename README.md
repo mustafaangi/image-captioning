@@ -54,7 +54,7 @@ python3 image_captioning_app.py
 ```
 
 ### Automated Scraping
-Scrape images from a Wikipedia page and generate captions:
+Scrape images from a web page and generate captions:
 ```sh
 python3 automate_url_captioner.py
 ```
