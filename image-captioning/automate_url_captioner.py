@@ -1,3 +1,33 @@
+"""
+This script scrapes images from a specified Wikipedia page, generates captions for each image using a pretrained model, 
+and writes the captions to a file.
+
+Modules:
+    requests: To make HTTP requests to download web pages and images.
+    PIL (Pillow): To handle image processing.
+    io: To handle byte streams.
+    bs4 (BeautifulSoup): To parse HTML and extract image elements.
+    transformers: To load the pretrained image captioning model and processor.
+
+Functions:
+    None
+
+Usage:
+    Run the script to download images from the specified Wikipedia page, generate captions, and save them to 'captions.txt'.
+
+Workflow:
+    1. Load the pretrained processor and model for image captioning.
+    2. Download the specified Wikipedia page.
+    3. Parse the page to find all image elements.
+    4. For each image element:
+        a. Extract the image URL.
+        b. Skip SVG images and very small images.
+        c. Correct malformed URLs.
+        d. Download the image.
+        e. Convert the image data to a PIL Image.
+        f. Process the image and generate a caption using the model.
+        g. Write the image URL and caption to 'captions.txt'.
+"""
 import requests
 from PIL import Image
 from io import BytesIO
@@ -9,7 +39,7 @@ processor = AutoProcessor.from_pretrained("Salesforce/blip-image-captioning-base
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
 # URL of the page to scrape
-url = "https://en.wikipedia.org/wiki/IBM"
+url = "URL of wanted page"
 
 # Download the page
 response = requests.get(url)
